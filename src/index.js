@@ -1,17 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import {StrictMode} from 'react'
+import ReactDOM from 'react-dom'
+import './style.css'
+import App from './App'
+//--------------------------------------------------------------------------------
+import {BrowserRouter as Router} from 'react-router-dom'//BrowserRouter is given an alias Router
+//or it could be understanded as Router is given the value of BrowserRouter
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(
+    //strict mode is for testing purposes, it gives warning to potential error and bug
+    <StrictMode>
+        <Router>
+            {/* wrapping App in here gives it ability to use Router/aka browser router */}
+            <App/>
+        </Router>
+    </StrictMode>,
+    document.getElementById('root')
+    //superimpose everything we create in our app into the root div in ./public/index.html
+)
